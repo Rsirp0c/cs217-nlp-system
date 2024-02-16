@@ -2,8 +2,6 @@ from collections import Counter
 import streamlit as st
 import ner
 import graphviz
-from src import *
-
 
 # set up session state
 if "view" not in st.session_state:
@@ -11,8 +9,9 @@ if "view" not in st.session_state:
 
 
 # title, text area, and sidebar 
-# st.set_page_config(layout='wide')
 st.markdown('## SpaCy Named Entity Recognition')
+
+example = open('input.txt').read()
 
 text = st.text_area('Text to process', value=example, height=100)
 st.info(text)

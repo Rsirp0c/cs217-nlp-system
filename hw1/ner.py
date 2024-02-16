@@ -6,9 +6,8 @@ Run spaCy NER over an input string and insert XML tags for each entity.
 
 import io
 import spacy
+from spacy import displacy
 from spacy_streamlit import visualize_ner
-
-
 
 class SpacyDocument:
 
@@ -49,6 +48,15 @@ class SpacyDocument:
     def get_entities_viz(self) -> str:
         visualize_ner(self.doc, labels = self.nlp.get_pipe("ner").labels)
 
+    def render_entities_HTML(self) -> str:
+        html = displacy.render(self.doc, style="ent", page=True)
+        return html
+    
+    def render_dependencies_HTML(self) -> str:
+        html = displacy.render(self.doc, style="dep", page=True)
+        return html
+    
+
 if __name__ == '__main__':
 
     example = (
@@ -64,5 +72,4 @@ if __name__ == '__main__':
     for entity in doc.get_entities():
         print(entity)
     print(doc.get_entities_with_markup())
-    for token in doc.doc:
-        print(token.text, token.dep_, token.head.text)
+    print(doc.get_dependency())
