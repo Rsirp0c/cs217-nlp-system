@@ -9,7 +9,17 @@ Provide a brief description of your project here.
 ## Installation
 To run this code, you need to install the following modules:
 - Module 1
+
 - Module 2
-- Module 3
+
+- 'app_streamlit.py'
+    - 'streamlit'
+    - 'graphviz'
+
+- ner
+    - 'spacy'
+    - 'spacy_streamlit
+
+
 
 You can install these modules using pip:
