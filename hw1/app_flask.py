@@ -26,6 +26,7 @@ def index_post():
         else:
             markup_paragraphed += line
     df = pd.DataFrame(dependencies_markup, columns=['Word', 'Dependency', 'Head'])
+
     html_table = df.to_html(index=False)
     for line in html_table.split('\n'):
         if line.strip() == '':
