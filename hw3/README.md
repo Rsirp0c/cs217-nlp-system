@@ -11,6 +11,7 @@ This project is use `docker` to wrap the previous three projects.
 - Streamlit and SpaCy
   - cd into `hw3/streamlit` repo
   - run command `docker compose up`
+  - go to `localhost:8501` to view it
   
 
 
